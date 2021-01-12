@@ -1,0 +1,25 @@
+{
+  "name": "NopCommerceTest",
+  "version": "1.0.0",
+  "description": "Automation test in NopEcommerce website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uyen3893/NopCommerceTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uyen3893/NopCommerceTest/issues"
+  },
+  "homepage": "https://github.com/uyen3893/NopCommerceTest#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "mocha": "^8.2.1",
+    "webdriverio": "^6.11.3"
+  }
+}
