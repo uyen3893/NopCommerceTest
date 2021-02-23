@@ -32,11 +32,9 @@ describe('Register page', () => {
         })
     
         it('4. should show error message when inputting password equal or less than 5 characters', () => {
-            for(var i = 1; i <= 5; i++) {
-                parameter.character += 'a'
-                RegisterPage.register(parameter.blank_value, parameter.blank_value, parameter.invalid_value, parameter.character)
-                expect(RegisterPage.wrong_password_message).toHaveText('must have at least 6 characters')
-            }
+            var character = 'a'
+            RegisterPage.register(parameter.blank_value, parameter.blank_value, parameter.invalid_value, character)
+            expect(RegisterPage.wrong_password_message).toHaveText('must have at least 6 characters')
             
         })
     
