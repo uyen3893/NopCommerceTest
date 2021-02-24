@@ -5,7 +5,6 @@ const invalid_email ='test@email.com'
 const invalid_value = 'acb'
 const password = 'Test@123'
 const blank_value = ''
-var character = ''
 
 module.exports = {
     firstname,
@@ -15,5 +14,4 @@ module.exports = {
     invalid_value,
     password,
     blank_value,
-    character
 }
