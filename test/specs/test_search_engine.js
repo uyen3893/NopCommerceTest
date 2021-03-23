@@ -11,7 +11,6 @@ describe('Search engine', () => {
     describe('Input valid keyword', () => {
         it('1. should show two apple\'s products', () => {
             Search.search('apple')
-            console.log('uyen2: ' + JSON.stringify(Search.get_title_of_product(0)))
             assert.strictEqual(Search.list_of_products.length, 2)
             expect(Search.get_title_of_product(0)).toHaveText('Apple MacBook Pro 13-inch')
             expect(Search.get_title_of_product(1)).toHaveText('Apple iCam')

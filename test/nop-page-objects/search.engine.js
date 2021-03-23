@@ -11,14 +11,6 @@ class Search extends Page {
     get list_of_products() {
         return $$('//div[@class="item-box"]')
     }   
-
-    // get first_title() {
-    //     return $$('//h2[@class="product-title"]/a[1]')
-    // }
-
-    // get second_title() {
-    //     return $('//h2[@class="product-title"]/a[2]')
-    // }
     
     get error_message() {
         return $('//div[@id="bar-notification"]/following-sibling::*/div[3]/div/div[2]/div/div[2]/div[2]/div/div[2]/div')
