@@ -17,10 +17,10 @@ class RegisterPage extends Page {
         return $('#ConfirmPassword')
     }
     get register_tab() {
-        return $('a=Register')
+        return $('//a[@href="/register?returnUrl=%2F"]')
     }
     get register_button() {
-        return $('//input[@id="register-button"]')
+        return $('#register-button')
     }
 
     get successful_register_message() {
@@ -48,11 +48,11 @@ class RegisterPage extends Page {
     }
 
     get logout_tab() {
-        return $('.ico-logout')
+        return $('//a[@href="/logout"]')
     }
 
     get wrong_password_message() {
-        return $('//span[@id="Password-error"]/ul/li')
+        return $('//li[text()="must have at least 6 characters"]')
     }
 
     get email_exists_message() {

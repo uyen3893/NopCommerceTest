@@ -2,21 +2,21 @@ const Page = require('./page')
 
 class LoginPage extends Page {
     
-    get login_tab () {return $('.ico-login')}
+    get login_tab () {return $('//a[text()="Log in"]')}
     get input_email() {return $('#Email')}
     get input_pass() {return $('#Password')}
-    get logout_tab() {return $('.ico-logout')}
-    get login_button() {return $('//input[@value="Log in"]')}
+    get logout_tab() {return $('//a[@href="/logout"]')}
+    get login_button() {return $('//button[text()="Log in"]')}
     get successful_login_message() {
         return $('//h2[text()="Welcome to our store"]')
     }
 
     get wrong_email_message() {
-        return $('//span[@id="Email-error"]')
+        return $('#Email-error')
     }
 
     get unsuccessful_login_message() {
-        return $('//form[@novalidate="novalidate"]/div/ul/li')
+        return $('//li[text()="The credentials provided are incorrect"]')
     }
 
     get forgot_password_button() {
@@ -24,15 +24,15 @@ class LoginPage extends Page {
     }
 
     get email_when_forgot_password() {
-        return $('//input[@id="Email"]')
+        return $('#Email')
     }
 
     get recover_button() {
-        return $('//input[@name="send-email"]')
+        return $('//button[text()="Recover"]')
     }
 
     get sent_email_message() {
-        return $('//div[@id="bar-notification"]/../div[6]/div[3]/div/div/div/div/div')
+        return $('.result')
     }
     
     login(username, password) {
