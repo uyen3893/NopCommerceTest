@@ -9,7 +9,7 @@ describe('Search engine', () => {
     })
 
     describe('Input valid keyword', () => {
-        it('1. should show two apple\'s products', () => {
+        it('12. should show two apple\'s products', () => {
             Search.search('apple')
             assert.strictEqual(Search.list_of_products.length, 2)
             expect(Search.get_title_of_product(0)).toHaveText('Apple MacBook Pro 13-inch')
@@ -18,12 +18,12 @@ describe('Search engine', () => {
     })
 
     describe('Input invalid keyword', () => {
-        it('should return error message when inputting wrong keyword', () => {
+        it('13. should return error message when inputting wrong keyword', () => {
             Search.search('jkhkakd')
             expect(Search.error_message).toHaveText('No products were found that matched your criteria.')
         })
 
-        it('should return error message when inputting a keyword that is less than 3 characters', () => {
+        it('14. should return error message when inputting a keyword that is less than 3 characters', () => {
             Search.search('ab')
             expect(Search.error_message).toHaveText('Search term minimum length is 3 characters')
         })

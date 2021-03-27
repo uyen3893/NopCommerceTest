@@ -1,6 +1,6 @@
 const firstname = 'uyen'
 const lastname = 'nguyen'
-const email = 'adain.48@dikybuyerj.com'
+const email = 'bernice.f20@qbknowsfq.com'
 const invalid_email ='test@email.com'
 const invalid_value = 'acb'
 const password = 'Test@123'
