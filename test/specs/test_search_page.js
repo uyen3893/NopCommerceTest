@@ -1,4 +1,4 @@
-const Search = require('../nop-page-objects/search.engine')
+const Search = require('../nop-page-objects/search.page')
 const parameter = require('./parameter')
 const assert = require('assert')
 
