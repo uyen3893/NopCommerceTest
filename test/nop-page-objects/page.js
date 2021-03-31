@@ -11,14 +11,9 @@ module.exports = class Page {
         return $('//button[@type="submit"]')
     }
     get wishlist_tab() {
-        return $('//a[@href="/wishlist"]')
+        return $('//div[@id="bar-notification"]/following-sibling::div/div/div/div[2]/div/ul/li[3]/a/span[@class="wishlist-label"]')
     }
-    get wishlist_notification_message() {
-        return $('//div[@id="bar-notification"]/div/p')
-    }
-    get wishlist_notification_close_icon() {
-        return $('//div[@id="bar-notification"]/div/span')
-    }
+    
 
     open() {
         return browser.url('https://frontend.nopcommerce.com/')
