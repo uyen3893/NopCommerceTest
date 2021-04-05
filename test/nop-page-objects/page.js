@@ -23,4 +23,11 @@ module.exports = class Page {
     setFrame() {
         return browser.switchToFrame(this.iframe)
     }
+    deleteCookies() {
+        return browser.deleteCookies()
+    }
+    enterFullScreen() {
+        return browser.fullscreenWindow()
+    }
+
 }
