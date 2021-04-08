@@ -42,6 +42,9 @@ class Wishlist extends Page {
     get_quantity_of_item(index) {
         return this.wishlist_records[index].$('./td[@class="quantity"]/input')
     }
+    get_quantity_of_item_in_Wishlist_URL(index) {
+        return this.wishlist_records[index].$('./td[@class="quantity"]/span')
+    }
     get_sku_value(index) {
         return this.wishlist_records[index].$('./td[@class="sku"]/span')
     }
@@ -80,19 +83,20 @@ class Wishlist extends Page {
         this.wishlist_notification_message.waitForDisplayed({timeout: 5000})
     }
 
-    update_item_to_wishlist() {
-        this.get_quantity_of_item(1).clearValue()
-        this.get_quantity_of_item(1).addValue(10)
+    update_item_to_wishlist(index) {
+        this.get_quantity_of_item(index).clearValue()
+        this.get_quantity_of_item(index).addValue(10)
         this.update_wishlist_button.click()
     }
 
-    add_item_to_cart(index) {
-        for(var i = 0; i < index; i++) {
-            this.get_add_to_cart_checkbox(i).click()
+    add_items_to_cart(item_indexes) {
+        for(var i = 0; i < item_indexes.length; i++) {
+            this.get_add_to_cart_checkbox(item_indexes[i]).click()
         }
+        this.add_to_cart_button.waitForClickable({timeout: 5000})
         this.add_to_cart_button.click()
-        super.wishlist_tab.click()
     }
+
 
     remove_item_in_wishlist(index) {
         this.get_remove_button(index).click()
