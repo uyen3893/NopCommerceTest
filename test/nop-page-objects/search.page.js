@@ -1,12 +1,6 @@
 const Page = require('./page')
 
 class Search extends Page {
-    get search_bar() {
-        return $('#small-searchterms')
-    }
-    get search_button() {
-        return $('//button[@type="submit"]')
-    }
         
     get list_of_products() {
         return $$('//div[@class="item-box"]')
@@ -22,12 +16,12 @@ class Search extends Page {
 
 
     search(keyword) {
-        this.search_bar.addValue(keyword)
-        this.search_button.click()
+        super.search_bar.addValue(keyword)
+        super.search_button.click()
     }
     
     clear_keyword() {
-        this.search_bar.clearValue()
+        super.search_bar.clearValue()
     }
 
     open() {

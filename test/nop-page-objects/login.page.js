@@ -2,10 +2,8 @@ const Page = require('./page')
 
 class LoginPage extends Page {
     
-    get login_tab () {return $('//a[text()="Log in"]')}
     get input_email() {return $('#Email')}
     get input_pass() {return $('#Password')}
-    get logout_tab() {return $('//a[@href="/logout"]')}
     get login_button() {return $('//button[text()="Log in"]')}
     get successful_login_message() {
         return $('//h2[text()="Welcome to our store"]')
@@ -36,14 +34,14 @@ class LoginPage extends Page {
     }
     
     login(username, password) {
-        this.login_tab.click()
+        super.login_tab.click()
         this.input_email.addValue(username)
         this.input_pass.addValue(password)
         this.login_button.click()
     }
 
     forgot_password(email) {
-        this.login_tab.click()
+        super.login_tab.click()
         this.forgot_password_button.click()
         this.email_when_forgot_password.addValue(email)
         this.recover_button.click()

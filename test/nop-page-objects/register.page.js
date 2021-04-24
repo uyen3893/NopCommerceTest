@@ -16,9 +16,7 @@ class RegisterPage extends Page {
     get confirm_password() {
         return $('#ConfirmPassword')
     }
-    get register_tab() {
-        return $('//a[@href="/register?returnUrl=%2F"]')
-    }
+    
     get register_button() {
         return $('#register-button')
     }
@@ -47,10 +45,6 @@ class RegisterPage extends Page {
         return $('#ConfirmPassword-error')
     }
 
-    get logout_tab() {
-        return $('//a[@href="/logout"]')
-    }
-
     get wrong_password_message() {
         return $('//li[text()="must have at least 6 characters"]')
     }
@@ -60,7 +54,7 @@ class RegisterPage extends Page {
     }
 
     register(firstname, lastname, email, password) {
-        this.register_tab.click()
+        super.register_tab.click()
         this.first_name.addValue(firstname)
         this.last_name.addValue(lastname)
         this.email.addValue(email)

@@ -1,6 +1,7 @@
-const Search = require('../nop-page-objects/search.engine')
-const parameter = require('./parameter')
+const Search = require('../nop-page-objects/search.page')
+const parameter = require('../data/parameter')
 const assert = require('assert')
+const products = require('../data/products')
 
 describe('Search engine', () => {
     before(() => {
@@ -10,10 +11,10 @@ describe('Search engine', () => {
 
     describe('Input valid keyword', () => {
         it('12. should show two apple\'s products', () => {
-            Search.search('apple')
+            Search.search(parameter.search_keyword)
             assert.strictEqual(Search.list_of_products.length, 2)
-            expect(Search.get_title_of_product(0)).toHaveText('Apple MacBook Pro 13-inch')
-            expect(Search.get_title_of_product(1)).toHaveText('Apple iCam')
+            expect(Search.get_title_of_product(0)).toHaveText(products.products[0].name)
+            expect(Search.get_title_of_product(1)).toHaveText(products.products[2].name)
         })
     })
 
