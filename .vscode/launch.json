@@ -8,7 +8,7 @@
             "name": "run select spec",
             "type": "node",
             "request": "launch",
-            "args": ["wdio.conf.js", "--spec", "test_login_page.js"],
+            "args": ["wdio.conf.js", "--spec", "test_wishlist_page.js"],
             "cwd": "${workspaceFolder}",
             "autoAttachChildProcesses": true,
             "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",

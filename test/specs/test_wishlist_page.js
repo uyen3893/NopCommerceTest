@@ -66,7 +66,6 @@ describe('Test the wishlist', () => {
     
         describe('Click update button', () => {
             it('18. should change the quantity of products when the quantity of products have been changed', () => {
-                console.log('old_array: ' + product_quantity)
                 Wishlist.update_item_to_wishlist(1)
                 expect(Wishlist.get_quantity_of_item(1)).toHaveAttribute('value', 10)
             })
@@ -100,8 +99,8 @@ describe('Test the wishlist', () => {
             })
         })
 
-        describe('Wishlist URL', () => {
-            it('22. should show correctly info of products', () => {
+        describe.only('Wishlist URL', () => {
+            it.only('22. should show correctly info of products', () => {
                 Wishlist.wishlist_URL.click()
                 let total_of_product = product_quantity.reduce((a,b) => {return a+b})
                 expect(Wishlist.number_of_item_in_wishlist).toHaveText('(' + total_of_product + ')')
@@ -111,7 +110,7 @@ describe('Test the wishlist', () => {
                     expect(Wishlist.get_product_name(i)).toHaveText(products.products[i].name)
                     expect(Wishlist.get_price(i)).toHaveText(money_formatter.usd_format.format(products.products[i].price))
                     expect(Wishlist.get_total_value(i)).toHaveText(money_formatter.usd_format.format(products.products[i].price*product_quantity[i]))
-                    expect(Wishlist.get_quantity_of_item_in_Wishlist_URL(i)).toHaveText('' + product_quantity[i] + '')
+                    expect(Wishlist.get_quantity_of_item_in_Wishlist_URL(i)).toHaveText(product_quantity[i].toString())
                 }
             })
         })
